@@ -1,12 +1,12 @@
 #include "textbox.h"
 
-TextBox::TextBox()
+TextBox::TextBox(): m_font("../Roboto-Regular.ttf"), m_content(m_font)
 {
     setup(5, 9, 200, sf::Vector2f(0, 0));
 }
 
 TextBox::TextBox(int l_visible, int l_charSize,
-    int l_width, sf::Vector2f l_screenPos)
+    int l_width, sf::Vector2f l_screenPos): m_font("../Roboto-Regular.ttf"), m_content(m_font)
 {
     setup(l_visible, l_charSize, l_width, l_screenPos);
 }
@@ -15,11 +15,11 @@ void TextBox::setup(int l_visible, int l_charSize, int l_width, sf::Vector2f l_s
 {
     m_numVisible = l_visible;
     sf::Vector2f l_offset(2.0f, 2.0f);
-    string font_name = "Arial.ttf";
-    while (!m_font.loadFromFile(font_name)) {
-        font_name = "../" + font_name;
-    }
-    m_content.setFont(m_font);
+    // string font_name = "Arial.ttf";
+    // while (!m_font.loadFromFile(font_name)) {
+    //     font_name = "../" + font_name;
+    // }
+    // m_content.setFont(m_font);
     m_content.setString("");
     m_content.setCharacterSize(l_charSize);
     m_content.setFillColor(sf::Color::White);

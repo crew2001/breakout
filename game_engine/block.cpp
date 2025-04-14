@@ -1,6 +1,6 @@
 #include "block.h"
 
-Block::Block(sf::Vector2f position, sf::Color color, int score)
+Block::Block(sf::Vector2f position, sf::Color color, int score) : m_blockSize(block_width, block_height)
 {
     m_block.setPosition(position);
     m_block.setSize(m_blockSize);

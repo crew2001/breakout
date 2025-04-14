@@ -3,5 +3,5 @@ add_library(
     wall.cpp block.cpp textbox.cpp
 )
 
-find_package(SFML 2.6 COMPONENTS graphics window REQUIRED)
-target_link_libraries(game_engine sfml-graphics sfml-window)
+find_package(SFML 3.0 COMPONENTS Graphics Window REQUIRED)
+target_link_libraries(game_engine SFML::Graphics SFML::Window)

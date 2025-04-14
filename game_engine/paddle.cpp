@@ -4,7 +4,7 @@ Paddle::Paddle()
 {
     m_paddle.setSize(m_paddleSize);
     m_paddle.setFillColor(sf::Color::White);
-    m_paddle.setPosition(300, 800);
+    m_paddle.setPosition({300, 800});
 }
 
 Direction Paddle::getDirection() { return m_direction; }
@@ -39,10 +39,10 @@ void Paddle::move(sf::Vector2u l_windSize, float l_elapsed)
     //     paddle_x = l_windSize.x - m_paddleSize.x;
     // }
     // setPosition(paddle_x, getPosition().y);
-    m_paddle.move(delta, 0.0);
+    m_paddle.move({delta, 0.0});
 }
 
-void Paddle::setPosition(float x, float y) { m_paddle.setPosition(x, y); }
+void Paddle::setPosition(float x, float y) { m_paddle.setPosition({x, y}); }
 
 sf::Vector2f Paddle::getSize() { return m_paddle.getSize(); }
 
@@ -63,4 +63,9 @@ void Paddle::pause()
 void Paddle::resume()
 {
     m_speed = 250.0;
+}
+
+sf::FloatRect Paddle::getGlobalBounds()
+{
+    return m_paddle.getGlobalBounds();
 }

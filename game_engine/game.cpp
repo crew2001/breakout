@@ -35,10 +35,11 @@ void Game::RestartClock() { m_elapsed = m_clock.restart(); }
 
 void Game::HandleInput()
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
         isPaused = !isPaused;
         if (isPaused) {
             pauseGame();
+            // sf::sleep(sf::milliseconds(100));
         } else {
             resumeGame();
         }
@@ -47,9 +48,9 @@ void Game::HandleInput()
     if (isPaused) {
         return;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::H)) {
         m_paddle.setDirection(Direction::Left);
-    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::L)) {
         m_paddle.setDirection(Direction::Right);
     } else {
         m_paddle.setDirection(Direction::None);

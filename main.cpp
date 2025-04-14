@@ -10,7 +10,7 @@ int main() {
         game.HandleInput();
         game.Update();
         game.Render();
-        // sf::sleep(sf::seconds(0.005));
+        sf::sleep(sf::seconds(0.0001));
         game.RestartClock();
     }
 }

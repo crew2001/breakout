@@ -27,7 +27,7 @@ public:
 
 private:
     sf::CircleShape m_ball;
-    sf::Vector2f m_increment = sf::Vector2f(175.f, 350.f);
+    sf::Vector2f m_increment = sf::Vector2f(250.f, 350.f);
     void blockCollision(Wall& l_wall);
     void paddleCollision(Paddle& l_paddle);
     void windowCollision(sf::Vector2u l_windSize);

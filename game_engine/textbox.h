@@ -31,6 +31,6 @@ private:
     int m_numVisible;
     MessageContainer m_messages;
     sf::RectangleShape m_backdrop;
-    sf::Font m_font;
+    const sf::Font m_font;
     sf::Text m_content;
 };

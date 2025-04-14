@@ -26,6 +26,7 @@ public:
 
     void pause();
     void resume();
+    sf::FloatRect getGlobalBounds();
 
 private:
     void checkCollision();

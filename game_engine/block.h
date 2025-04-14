@@ -17,6 +17,8 @@ public:
 
 private:
     sf::RectangleShape m_block;
-    sf::Vector2f m_blockSize = sf::Vector2f(40.f, 5.f);
+    float block_width = 40.f;
+    float block_height = 5.f;
+    sf::Vector2f m_blockSize;
     int m_score;
 };
