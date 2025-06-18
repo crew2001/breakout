@@ -13,24 +13,22 @@ using MessageContainer = vector<string>;
 
 class TextBox {
 public:
-    TextBox();
-    TextBox(int l_visible, int l_charSize, int l_width, sf::Vector2f l_screenPos);
-    ~TextBox() = default;
+  TextBox();
+  TextBox(int l_visible, int l_charSize, int l_width, sf::Vector2f l_screenPos);
+  ~TextBox() = default;
 
-    void setup(int l_visible, int l_charSize, int l_width, sf::Vector2f l_screenPos);
-    void render(sf::RenderWindow& l_window);
+  void setup(int l_visible, int l_charSize, int l_width,
+             sf::Vector2f l_screenPos);
+  void render(sf::RenderWindow &l_window);
 
-    void add(string l_message);
+  void add(string l_message);
 
-    void clear()
-    {
-        m_messages.clear();
-    };
+  void clear() { m_messages.clear(); };
 
 private:
-    int m_numVisible;
-    MessageContainer m_messages;
-    sf::RectangleShape m_backdrop;
-    const sf::Font m_font;
-    sf::Text m_content;
+  int m_numVisible;
+  MessageContainer m_messages;
+  sf::RectangleShape m_backdrop;
+  sf::Font m_font;
+  sf::Text m_content;
 };
